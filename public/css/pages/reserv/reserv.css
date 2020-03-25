@@ -1,3 +1,6 @@
+.card .card-body .reserv_form .buttons_box .buttons .btn_reserv {
+  margin-bottom: 5px;
+}
 .card .card-body .reserv_form .check_reserv_wrap .check_reserv_box input {
   margin-top: 14px;
 }

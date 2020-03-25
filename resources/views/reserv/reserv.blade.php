@@ -57,12 +57,13 @@
       </div>
     </div>
 
-    <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-3 justify-content-start">
+    <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-3 justify-content-start buttons_box">
       <div class="buttons">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary btn_reserv">
         Сохранить
         </button>
-        <a href="#" class="btn btn-primary">Удалить бронь</a>
+        <a href="#" class="btn btn-primary btn_reserv">Номер</a>
+        <a href="#" class="btn btn-primary btn_reserv">Удалить бронь</a>
       </div>
     </div>
   </form>

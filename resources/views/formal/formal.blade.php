@@ -3,7 +3,7 @@
 @section('content')
   <div class="content">
     <div class="formal_btn_box">
-      <a href="/guestregister" class="btn btn-primary">Оформление гостя</a>
+      <a href="/guestregister" class="btn btn-primary">Регистрация гостя</a>
     </div>
 
     <div class="card">

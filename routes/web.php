@@ -20,3 +20,6 @@ Route::get('/guest/{id_guest}', 'GuestController@index')->name('guest')->middlew
 Route::get('/formal', 'FormalController@index')->name('formal')->middleware('guest');
 Route::get('/reserv/{reserv_id}', 'ReservController@index')->name('reserv')->middleware('guest');
 Route::get('/guestregister', 'GuestRegisterController@index')->name('guestRegister')->middleware('guest');
+Route::get('/gueststay/{num_room}', 'GuestStayController@index')->name('guestStay')->middleware('guest');
+Route::get('/guestlist/{num_list}', 'GuestListController@index')->name('guestList')->middleware('guest');
+Route::get('/pay/{num_list}', 'PayController@index')->name('pay')->middleware('guest');
