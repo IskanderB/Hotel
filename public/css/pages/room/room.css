@@ -1,0 +1,18 @@
+.content .status_box_num {
+  margin-top: 10px;
+}
+.content .status_box_num h5 {
+  margin-top: 3px;
+}
+.content .status_box_num .status {
+  padding: 5px 25px 5px 25px;
+  background-color: red;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+.content .room_btns {
+  margin-top: 20px;
+}
+.content .room_btns a {
+  margin-right: 10px;
+}

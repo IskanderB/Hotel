@@ -1,0 +1,213 @@
+/* Vars color */
+@white: #F7FAF8;
+@gray: #E4E7E5;
+@superb_gray: #989A99;
+
+/* Includes */
+@import "pages/homepage/homepage.css" screen;
+@import "pages/rooms/rooms.css" screen;
+@import "pages/room/room.css" screen;
+@import "pages/reserv/reserv.css" screen;
+@import "pages/formal/formal.css" screen;
+/* Specification */
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: @white;
+}
+
+a{
+  color: #000;
+}
+a:hover{
+  text-decoration: none;
+  color: #000;
+}
+
+ul, li{
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5{
+  font-weight: 700;
+  color: #000;
+}
+
+/* First screen */
+.logo{
+  font-size: 48px;
+  .logo_text{
+    margin-left: 10px;
+    a{
+      font-family: 'Fredoka One', cursive;
+    }
+  }
+
+  .fa-graduation-cap{
+    margin-top: 10px;
+  }
+
+  .menu_bar{
+    display: none;
+  }
+}
+
+
+header{
+  padding-top: 38px;
+  .container{
+    .row{
+      height: 100%;
+
+      nav{
+        height: 100%;
+        .menu{
+          height: 100%;
+          .menu__item{
+            height: 100%;
+            border-radius: 25px;
+            transition: 0.5s;
+            // padding: 23px 27px;
+            a{
+              padding: 23px 27px;
+              display: block;
+              height: 100%;
+              div{
+                font-size: 18px;
+                transition: 0.3s;
+                color: #000;
+                height: 100%;
+              }
+            }
+          }
+
+          .menu__item:hover{
+            transition: 0.7s;
+            background-color: @gray;
+            a{
+              transition: 0.7s;
+              color: @superb_gray;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
+.content_self{
+  margin-top: 30px;
+  .container{
+    .row{
+      .sitebar{
+        .sidebar_box{
+          .label{
+            font-size: 20px;
+            text-align: center;
+          }
+          .btn_box{
+            width: 100%;
+            a{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  .logo_footer{
+    font-size: 28px;
+    margin-top: 12px;
+    .logo_footer_wrap{
+      display: inline-block;
+      float: none;
+      margin: auto;
+      a{
+        display: inline-block;
+        font-family: 'Fredoka One', cursive;
+        color: @superb_gray;
+        transition: 0.7s;
+        .logo_footer_box{
+          i{
+            margin-right: 5px;
+            display: inline-block;
+            margin-top: 7px;
+          }
+        }
+      }
+      a:hover{
+        color: inherit;
+        transition: 0.7s;
+      }
+    }
+  }
+
+  .menu_footer{
+    nav{
+      height: 100%;
+      .menu{
+        height: 100%;
+        .menu__item{
+          height: 100%;
+          border-radius: 25px;
+          transition: 0.5s;
+          a{
+            padding: 23px 27px;
+            display: block;
+            div{
+              font-size: 14px;
+              transition: 0.3s;
+              color: #000;
+            }
+          }
+        }
+
+        .menu__item:hover{
+          transition: 0.7s;
+          background-color: @gray;
+          a{
+            transition: 0.7s;
+            color: @superb_gray;
+          }
+        }
+      }
+    }
+  }
+
+  .icons_footer{
+    font-size: 40px;
+    display: block;
+      ul{
+        display: block;
+        float: right;
+        margin-top: 3px;
+        li:last-child{
+          margin-left: 25px;
+        }
+        li{
+          a{
+            transition: 0.7s;
+            color: @superb_gray;
+            display: inline-block;
+            i{
+              display: block;
+            }
+          }
+          a:hover{
+            transition: 0.7s;
+            color: inherit;
+          }
+        }
+      }
+  }
+}
