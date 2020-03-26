@@ -12,16 +12,14 @@
       <div class="card-body">
         <div class="col-lg-10 tasks_box offset-lg-1" id='tasks_box'>
           <ul class="tasks_list">
-            <?php
-              for($i=1;$i<=10;$i++){
-            ?>
+            @foreach($reservs as $reserv)
             <li>
               <div class="task_box d-flex">
                 <div class="info_room_box">
                   <div class="task_name d-flex">
                     <div class="name_and_new d-flex">
                       <h5>
-                        <a href="/reserv/{{$i}}">Номер брони {{$i}}</a>
+                        <a href="/reserv/{{$reserv->id}}">Номер брони {{$reserv->id}}</a>
                       </h5>
                     </div>
                   </div>
@@ -30,40 +28,40 @@
                     <ul>
                       <li>
                         <span>Имя: </span>
-                        <span>{{'Test'}}</span>
+                        <span>{{$reserv->guest_name}}</span>
                       </li>
                       <li>
                         <span>Номер телефона: </span>
-                        <span>{{'Test'}}</span>
+                        <span>{{$reserv->num_phone}}</span>
                       </li>
                       <li>
                         <span>Номер комнаты: </span>
-                        <span>{{'Test'}}</span>
+                        <span>{{$reserv->num_room}}</span>
                       </li>
                       <li>
                         <span>Срок: </span>
-                        <span>{{'Test'}}</span>
+                        <span>{{$reserv->time_in}}</span>
+                        <span>{{' - '}}</span>
+                        <span>{{$reserv->time_out}}</span>
                       </li>
                       <li>
                         <span>Сумма брони: </span>
-                        <span>{{'Test'}}</span>
+                        <span>{{' - '}}</span>
                       </li>
                       <li>
                         <span>Комментарий: </span>
-                        <span>{{'Test'}}</span>
+                        <span>{{$reserv->comment}}</span>
                       </li>
                       <li>
                         <span>Статус брони: </span>
-                        <span>{{'Test'}}</span>
+                        <span>{{' - '}}</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </li>
-            <?php
-          }
-            ?>
+            @endforeach
           </ul>
         </div>
       </div>

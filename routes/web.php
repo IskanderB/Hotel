@@ -23,3 +23,7 @@ Route::get('/guestregister', 'GuestRegisterController@index')->name('guestRegist
 Route::get('/gueststay/{num_room}', 'GuestStayController@index')->name('guestStay')->middleware('guest');
 Route::get('/guestlist/{num_list}', 'GuestListController@index')->name('guestList')->middleware('guest');
 Route::get('/pay/{num_list}', 'PayController@index')->name('pay')->middleware('guest');
+Route::post('/reservguest', 'ReservController@reservGuest')->name('reservguest')->middleware('guest');
+Route::get('/happy/{type}/{id}', 'HappyController@index')->name('happy')->middleware('guest');
+Route::post('/reservedit', 'ReservController@reservEdit')->name('reservedit')->middleware('guest');
+Route::post('/guestregisterproc', 'GuestRegisterController@guestRegister')->name('guestregisterproc')->middleware('guest');

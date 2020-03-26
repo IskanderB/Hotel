@@ -87,59 +87,43 @@
       </div>
 
       <div class="col-lg-4 sitebar">
-        <div class="auth_box sidebar_box justify-content-center d-none">
-          <div class="label">
-            Хотите забронировать номер?
-          </div>
-          <div class="auth_label">
-            Для этого необходимо
-          </div>
-          <div class="btn_box">
-            <a href="#" class="btn btn-primary">Войти</a>
-          </div>
-          <div class="label">
-            или
-          </div>
-          <div class="btn_box">
-            <a href="#" class="btn btn-primary">Зарегистрироваться</a>
-          </div>
-        </div>
         <div class="reserv_box sidebar_box justify-content-center">
-          <div class="btn_box">
-            <a href="#" class="btn btn-primary">Выйти</a>
-          </div>
-          <br>
           <div class="label">
             Бронирование номера:
           </div>
           <br>
           <div class="form_entrance">
-            <form class="form_entrance" method="POST" action="/">
+            <form class="form_entrance" method="POST" action="/reservguest">
               @csrf
 
               <div class="form-group">
-                <label >Имя</label>
-                <input name="cust_name" class="form-control" id="cust_name" placeholder="Введите номер комнаты" required>
+                <label >ФИО</label>
+                <input name="guest_name" class="form-control" id="cust_name" placeholder="ФИО" required maxlength="130" minlength="10">
               </div>
 
               <div class="form-group">
                 <label>Номер телефона</label>
-                <input class="form-control" name="num_phone" required id="num_phone" placeholder="Введите срок проживания">
+                <input class="form-control" name="num_phone" required id="num_phone" placeholder="Введите номер телефона" maxlength="20" minlength="3">
               </div>
 
               <div class="form-group">
                 <label >Номер комнаты</label>
-                <input name="num_room" class="form-control" id="num_room" placeholder="Введите номер комнаты" required>
+                <input name="num_room" class="form-control" id="num_room" placeholder="Введите номер комнаты" required maxlength="5" minlength="1">
               </div>
 
               <div class="form-group">
-                <label>Срок</label>
-                <input class="form-control" name="time_stay" required id="time_stay" placeholder="Введите срок проживания">
+                <label>Дата прибытия</label>
+                <input type="date" class="form-control" name="time_in" required id="time_in" maxlength="130">
+              </div>
+
+              <div class="form-group">
+                <label>Дата отъезда</label>
+                <input type="date" class="form-control" name="time_out" required id="time_out" maxlength="130">
               </div>
 
               <div class="form-group">
                 <label>Комментарий</label>
-                <input class="form-control" name="comment" id="comment" placeholder="Особые пожелания">
+                <input class="form-control" name="comment" id="comment" placeholder="Особые пожелания" maxlength="300">
               </div>
 
               <div class="form-group form-check">
