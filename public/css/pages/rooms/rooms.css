@@ -1,38 +1,41 @@
 /* Vars color */
-.card .card-body .tasks_box {
+.content a {
+  margin-bottom: 10px;
+}
+.content .card .card-body .tasks_box {
   min-height: 250px;
   max-height: 350px;
   overflow-y: scroll;
   overflow-x: hidden;
   margin-bottom: 20px;
 }
-.card .card-body .tasks_box .tasks_list li .task_box {
+.content .card .card-body .tasks_box .tasks_list li .task_box {
   padding: 10px 10px 10px 10px;
   border: 1px solid #989a99;
   border-radius: 7px;
   margin-bottom: 10px;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .info_room_box {
+.content .card .card-body .tasks_box .tasks_list li .task_box .info_room_box {
   width: 70%;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .info_room_box .task_name {
+.content .card .card-body .tasks_box .tasks_list li .task_box .info_room_box .task_name {
   justify-content: space-between;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .info_room_box .task_name .check_btn {
+.content .card .card-body .tasks_box .tasks_list li .task_box .info_room_box .task_name .check_btn {
   cursor: pointer;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .info_room_box .task_name .name_and_new {
+.content .card .card-body .tasks_box .tasks_list li .task_box .info_room_box .task_name .name_and_new {
   width: 90%;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .info_room_box .task_name .name_and_new h5 {
+.content .card .card-body .tasks_box .tasks_list li .task_box .info_room_box .task_name .name_and_new h5 {
   max-width: 70%;
   flex-wrap: wrap;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .status_box {
+.content .card .card-body .tasks_box .tasks_list li .task_box .status_box {
   width: 30%;
   min-height: 100%;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .status_box .status {
+.content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status {
   width: 90%;
   min-height: 90%;
   margin: auto;
@@ -41,7 +44,7 @@
   border-radius: 20px;
   margin-top: 7px;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .status_box .status .status_text {
+.content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status .status_text {
   -moz-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
@@ -49,28 +52,28 @@
   transform: rotate(-45deg);
   display: inline-block;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .status_box .status_busy {
+.content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_busy {
   background-color: red;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .status_box .status_busy .status_text {
+.content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_busy .status_text {
   margin-top: 52px;
   margin-left: 40px;
   font-size: 20px;
   color: black;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .status_box .status_avail {
+.content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_avail {
   background-color: green;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .status_box .status_avail .status_text {
+.content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_avail .status_text {
   margin-top: 52px;
   margin-left: 27px;
   font-size: 20px;
   color: white;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .status_box .status_reserv {
+.content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_reserv {
   background-color: blue;
 }
-.card .card-body .tasks_box .tasks_list li .task_box .status_box .status_reserv .status_text {
+.content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_reserv .status_text {
   margin-top: 52px;
   margin-left: 40px;
   font-size: 20px;

@@ -2,22 +2,21 @@
 
 @section('content')
 <div class="content">
+  <a href="/roomcreate" class="btn btn-primary btn_reserv">Добавить номер</a>
   <div class="card">
     <div class="card-header">Номера</div>
 
     <div class="card-body">
       <div class="col-lg-10 tasks_box offset-lg-1" id='tasks_box'>
         <ul class="tasks_list">
-          <?php
-            for($i=1;$i<=10;$i++){
-          ?>
+          @foreach($rooms as $room)
           <li>
             <div class="task_box d-flex">
               <div class="info_room_box">
                 <div class="task_name d-flex">
                   <div class="name_and_new d-flex">
                     <h5>
-                      <a href="/room/{{$i}}">Номер {{$i}}</a>
+                      <a href="/room/{{$room->id}}">Номер {{$room->id}}</a>
                     </h5>
                   </div>
                 </div>
@@ -26,23 +25,27 @@
                   <ul>
                     <li>
                       <span>Тип номера: </span>
-                      <span>{{'Test'}}</span>
+                      <span>{{$room->type_room}}</span>
                     </li>
                     <li>
                       <span>Количество комнат: </span>
-                      <span>{{'Test'}}</span>
+                      <span>{{$room->place_num}}</span>
                     </li>
                     <li>
                       <span>Этаж: </span>
-                      <span>{{'Test'}}</span>
+                      <span>{{$room->floor}}</span>
+                    </li>
+                    <li>
+                      <span>Телефон: </span>
+                      <span>{{$room->num_phone}}</span>
                     </li>
                     <li>
                       <span>Вместимость: </span>
-                      <span>{{'Test'}}</span>
+                      <span>{{$room->size}}</span>
                     </li>
                     <li>
                       <span>Стоимость: </span>
-                      <span>{{'Test'}}</span>
+                      <span>{{$room->price}}</span>
                     </li>
                   </ul>
                 </div>
@@ -69,9 +72,7 @@
               </div>
             </div>
           </li>
-          <?php
-        }
-          ?>
+          @endforeach
         </ul>
       </div>
     </div>

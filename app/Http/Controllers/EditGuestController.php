@@ -5,29 +5,38 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Guest;
 
-class GuestRegisterController extends Controller
+class EditGuestController extends Controller
 {
   private $sizes = [
     'guest_name' => 130,
-    'sex' => 1,
+    'sex' => 2,
     'type_doc' => 32,
     'num_doc' => 50,
     'born_date' => 30,
     'address' => 200,
   ];
-  public function index()
+
+  public function index(Request $request)
   {
-    return view('guestRegister.guestRegister');
+    return view('editGuest.editGuest', [
+      'guest' => $this->getGuest($request->id_guest),
+    ]);
   }
 
-  public function guestRegister(Request $request)
+  private function getGuest($id)
+  {
+    $guest_obj = new Guest();
+    return $guest_obj->getGuest($id)[0];
+  }
+
+  public function editGuest(Request $request)
   {
     $this->checkEmptySize($request);
 
     $guest_obj = new Guest();
-    $guest = $guest_obj->guestRegister($request);
+    $guest = $guest_obj->editGuest($request);
 
-    if($guest) return redirect()->route('happy', ['type' => 'guest', 'id' => $guest]);
+    if($guest) return redirect()->route('happy', ['type' => 'room', 'id' => $guest]);
     else die('Что то пошло не так :(');
   }
 

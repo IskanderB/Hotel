@@ -27,3 +27,11 @@ Route::post('/reservguest', 'ReservController@reservGuest')->name('reservguest')
 Route::get('/happy/{type}/{id}', 'HappyController@index')->name('happy')->middleware('guest');
 Route::post('/reservedit', 'ReservController@reservEdit')->name('reservedit')->middleware('guest');
 Route::post('/guestregisterproc', 'GuestRegisterController@guestRegister')->name('guestregisterproc')->middleware('guest');
+Route::post('/goin', 'GuestListController@goIn')->name('goIn')->middleware('guest');
+Route::get('/roomcreate', 'RoomCreateController@index')->name('roomcreate')->middleware('guest');
+Route::post('/appendroom', 'RoomController@appendRoom')->name('appendroom')->middleware('guest');
+Route::get('/editroompage/{num_room}', 'EditRoomController@index')->name('editroom')->middleware('guest');
+Route::post('/editroom', 'EditRoomController@editRoom')->name('editroom')->middleware('guest');
+Route::get('/deleteroom/{num_room}', 'EditRoomController@deleteRoom')->name('deleteroom')->middleware('guest');
+Route::get('/editguestpage/{id_guest}', 'EditGuestController@index')->name('editguestpage')->middleware('guest');
+Route::post('/editguest', 'EditGuestController@editGuest')->name('editguest')->middleware('guest');

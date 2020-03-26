@@ -66,5 +66,62 @@
         </div>
       </div>
     </div>
+
+    <br>
+    <br>
+    <div class="card">
+      <div class="card-header">Гости</div>
+
+      <div class="card-body">
+        <div class="col-lg-10 tasks_box offset-lg-1" id='tasks_box'>
+          <ul class="tasks_list">
+            @foreach($guests as $guest)
+            <li>
+              <div class="task_box d-flex">
+                <div class="info_room_box">
+                  <div class="task_name d-flex">
+                    <div class="name_and_new d-flex">
+                      <h5>
+                        <a href="/guest/{{$guest->id}}">ID гостя {{$guest->id}}</a>
+                      </h5>
+                    </div>
+                  </div>
+
+                  <div class="task_text">
+                    <ul>
+                      <li>
+                        <span>ФИО: </span>
+                        <span>{{$guest->guest_name}}</span>
+                      </li>
+                      <li>
+                        <span>Пол: </span>
+                        <span>{{$guest->sex}}</span>
+                      </li>
+                      <li>
+                        <span>Тип документа: </span>
+                        <span>{{$guest->type_doc}}</span>
+                      </li>
+                      <li>
+                        <span>Номер документа: </span>
+                        <span>{{$guest->num_doc}}</span>
+                      </li>
+                      <li>
+                        <span>Дата рождения: </span>
+                        <span>{{$guest->born_date}}</span>
+                      </li>
+                      <li>
+                        <span>Адрес: </span>
+                        <span>{{$guest->address}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            @endforeach
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 @endsection

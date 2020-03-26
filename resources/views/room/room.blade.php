@@ -3,28 +3,32 @@
 @section('content')
   <div class="content">
     <div class="num_room">
-      <h5>Номер {{request()->num_room}}</h5>
+      <h5>Номер {{$room->id}}</h5>
     </div>
     <ul>
       <li>
         <span>Тип номера: </span>
-        <span>{{'Test'}}</span>
+        <span>{{$room->type_room}}</span>
       </li>
       <li>
         <span>Количество комнат: </span>
-        <span>{{'Test'}}</span>
+        <span>{{$room->place_num}}</span>
       </li>
       <li>
         <span>Этаж: </span>
-        <span>{{'Test'}}</span>
+        <span>{{$room->floor}}</span>
+      </li>
+      <li>
+        <span>Телефон: </span>
+        <span>{{$room->num_phone}}</span>
       </li>
       <li>
         <span>Вместимость: </span>
-        <span>{{'Test'}}</span>
+        <span>{{$room->size}}</span>
       </li>
       <li>
         <span>Стоимость: </span>
-        <span>{{'Test'}}</span>
+        <span>{{$room->price}}</span>
       </li>
     </ul>
 
@@ -48,6 +52,7 @@
       <a href="/guest/1" class="btn btn-primary">Гость</a>
       <a href="/guestlist/1" class="btn btn-primary">Guest-лист</a>
       <a href="/gueststay/{{request()->num_room}}" class="btn btn-primary btn_reserv">Заселение</a>
+      <a href="/editroompage/{{request()->num_room}}" class="btn btn-primary btn_reserv">Редактировать описание</a>
     </div>
   </div>
 @endsection

@@ -19,7 +19,7 @@ class CreateGuestsTable extends Migration
             $table->string('guest_name')->nullable();
             $table->string('sex')->nullable();
             $table->string('type_doc')->nullable();
-            $table->integer('num_doc')->nullable();
+            $table->string('num_doc')->nullable();
             $table->date('born_date')->nullable();
             $table->string('address')->nullable();
         });
