@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reserv extends Model
 {
-    public $timestamps = false;
+
     public function reservGuest($request)
     {
       return $this->insertGetId([

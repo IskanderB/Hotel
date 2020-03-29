@@ -10,7 +10,6 @@ class GuestRegisterController extends Controller
   private $sizes = [
     'guest_name' => 130,
     'sex' => 1,
-    'type_doc' => 32,
     'num_doc' => 50,
     'born_date' => 30,
     'address' => 200,

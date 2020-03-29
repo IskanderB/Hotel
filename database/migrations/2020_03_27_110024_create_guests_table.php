@@ -16,12 +16,14 @@ class CreateGuestsTable extends Migration
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('guest_name')->nullable();
-            $table->string('sex')->nullable();
-            $table->string('type_doc')->nullable();
-            $table->string('num_doc')->nullable();
+            $table->string('guest_name', 130)->nullable();
+            $table->string('sex', 1)->nullable();
+            $table->bigInteger('type_doc')->nullable()->unsigned();
+            $table->foreign('type_doc')->references('id')->on('type_docs');
+            $table->string('num_doc', 50)->nullable();
+            $table->string('num_phone', 30)->nullable();
             $table->date('born_date')->nullable();
-            $table->string('address')->nullable();
+            $table->string('address', 200)->nullable();
         });
     }
 

@@ -8,7 +8,6 @@ use App\Room;
 class EditRoomController extends Controller
 {
   private $sizes = [
-    'type_room' => 130,
     'place_num' => 2,
     'floor' => 3,
     'num_phone' => 30,

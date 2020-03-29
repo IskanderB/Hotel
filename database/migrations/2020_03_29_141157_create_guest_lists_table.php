@@ -16,8 +16,12 @@ class CreateGuestListsTable extends Migration
         Schema::create('guest_lists', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('num_room')->nullable();
-            $table->integer('id_guest')->nullable();
+            $table->bigInteger('id_reserv')->nullable()->unsigned();
+            $table->foreign('id_reserv')->references('id')->on('reservs');
+            $table->bigInteger('num_room')->nullable()->unsigned();
+            $table->foreign('num_room')->references('id')->on('rooms');
+            $table->bigInteger('id_guest')->nullable()->unsigned();
+            $table->foreign('id_guest')->references('id')->on('guests');
             $table->date('time_in')->nullable();
             $table->date('time_out')->nullable();
             $table->integer('pay')->nullable();

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
+    public $timestamps = false;
     public function appendRoom($request)
     {
       return $this->insertGetId([
@@ -20,12 +21,25 @@ class Room extends Model
 
     public function getRooms()
     {
-      return $this->select()->get();
+      return $this
+      ->leftJoin('guest_lists', 'rooms.id', '=', 'guest_lists.num_room')
+      ->leftJoin('reservs', 'rooms.id', '=', 'reservs.num_room')
+      ->select('rooms.id as id', 'rooms.type_room as type_room', 'rooms.place_num as place_num', 'rooms.floor as floor',
+      'rooms.num_phone as num_phone', 'rooms.price as price', 'rooms.size as size', 'guest_lists.id as g_l_id',
+      'reservs.check_reserv as check_reserv')
+      ->get();
     }
 
     public function getRoom($id)
     {
-      return $this->select()->where('id', '=', $id)->get();
+      return $this
+      ->leftJoin('guest_lists', 'rooms.id', '=', 'guest_lists.num_room')
+      ->leftJoin('reservs', 'rooms.id', '=', 'reservs.num_room')
+      ->select('rooms.id as id', 'rooms.type_room as type_room', 'rooms.place_num as place_num', 'rooms.floor as floor',
+      'rooms.num_phone as num_phone', 'rooms.price as price', 'rooms.size as size', 'guest_lists.id as g_l_id',
+      'guest_lists.id_guest as id_guest','reservs.check_reserv as check_reserv')
+      ->where('rooms.id', '=', $id)
+      ->get();
     }
 
     public function editRoom($request)

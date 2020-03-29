@@ -16,7 +16,7 @@
   margin-bottom: 10px;
 }
 .content .card .card-body .tasks_box .tasks_list li .task_box .info_room_box {
-  width: 70%;
+  width: 65%;
 }
 .content .card .card-body .tasks_box .tasks_list li .task_box .info_room_box .task_name {
   justify-content: space-between;
@@ -32,7 +32,7 @@
   flex-wrap: wrap;
 }
 .content .card .card-body .tasks_box .tasks_list li .task_box .status_box {
-  width: 30%;
+  width: 35%;
   min-height: 100%;
 }
 .content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status {
@@ -57,25 +57,25 @@
 }
 .content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_busy .status_text {
   margin-top: 52px;
-  margin-left: 40px;
-  font-size: 20px;
+  margin-left: 43px;
+  font-size: 30px;
   color: black;
 }
 .content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_avail {
-  background-color: green;
+  background-color: #00D400;
 }
 .content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_avail .status_text {
   margin-top: 52px;
-  margin-left: 27px;
-  font-size: 20px;
+  margin-left: 17px;
+  font-size: 30px;
   color: white;
 }
 .content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_reserv {
-  background-color: blue;
+  background-color: #2C2CFF;
 }
 .content .card .card-body .tasks_box .tasks_list li .task_box .status_box .status_reserv .status_text {
   margin-top: 52px;
   margin-left: 40px;
-  font-size: 20px;
+  font-size: 30px;
   color: white;
 }

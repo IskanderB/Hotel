@@ -34,24 +34,39 @@
 
     <div class="status_box_num d-flex">
       <h5>Статус: </h5>
-      <div class="status">
+      @if($room->g_l_id)
+      <div class="status status_busy">
         Занят
       </div>
+      @else
+      <div class="status status_avail">
+        Свободен
+      </div>
+      @endif
     </div>
 
     <div class="reserv_status_box d-flex">
       <h5>Бронь: </h5>
       <a href="#">
-        <div class="reserv_status">
+        @if($room->check_reserv)
+        <div class="reserv_status reserv_status_busy">
           Забронирован
         </div>
+        @else
+        <div class="reserv_status reserv_status_avail">
+          Не забронирован
+        </div>
+        @endif
       </a>
     </div>
 
     <div class="room_btns">
-      <a href="/guest/1" class="btn btn-primary">Гость</a>
-      <a href="/guestlist/1" class="btn btn-primary">Guest-лист</a>
+      @if($room->g_l_id)
+      <a href="/guest/{{$room->id_guest}}" class="btn btn-primary">Гость</a>
+      <a href="/guestlist/{{$room->g_l_id}}" class="btn btn-primary">Guest-лист</a>
+      @else
       <a href="/gueststay/{{request()->num_room}}" class="btn btn-primary btn_reserv">Заселение</a>
+      @endif
       <a href="/editroompage/{{request()->num_room}}" class="btn btn-primary btn_reserv">Редактировать описание</a>
     </div>
   </div>

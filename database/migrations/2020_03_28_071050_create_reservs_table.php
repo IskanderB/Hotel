@@ -15,12 +15,15 @@ class CreateReservsTable extends Migration
     {
         Schema::create('reservs', function (Blueprint $table) {
             $table->id();
-            $table->string('guest_name')->nullable();
-            $table->string('num_phone')->nullable();
-            $table->string('num_room')->nullable();
+            $table->timestamps();
+            $table->string('guest_name', 130)->nullable();
+            $table->string('num_phone', 20)->nullable();
+            $table->bigInteger('num_room')->nullable()->unsigned();
+            $table->foreign('num_room')->references('id')->on('rooms')
+            ->onDelete('cascade');
             $table->date('time_in')->nullable();
             $table->date('time_out')->nullable();
-            $table->text('comment')->nullable();
+            $table->text('comment', 300)->nullable();
             $table->integer('reserv_sum')->default(0);
             $table->boolean('check_reserv')->default(false);
         });

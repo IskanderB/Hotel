@@ -52,23 +52,25 @@
               </div>
 
               <div class="status_box justify-content-center">
-                <div class="status status_busy justify-content-center d-none">
+              @if($room->g_l_id)
+                <div class="status status_busy justify-content-center">
                   <div class="status_text">
                     Занят
                   </div>
                 </div>
-
-                <div class="status status_avail justify-content-center d-none">
-                  <div class="status_text">
-                    Свободен
-                  </div>
-                </div>
-
+                @elseif($room->check_reserv)
                 <div class="status status_reserv justify-content-center">
                   <div class="status_text">
                     Бронь
                   </div>
                 </div>
+                @else
+                <div class="status status_avail justify-content-center">
+                  <div class="status_text">
+                    Свободен
+                  </div>
+                </div>
+                @endif
               </div>
             </div>
           </li>

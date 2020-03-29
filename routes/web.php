@@ -35,3 +35,5 @@ Route::post('/editroom', 'EditRoomController@editRoom')->name('editroom')->middl
 Route::get('/deleteroom/{num_room}', 'EditRoomController@deleteRoom')->name('deleteroom')->middleware('guest');
 Route::get('/editguestpage/{id_guest}', 'EditGuestController@index')->name('editguestpage')->middleware('guest');
 Route::post('/editguest', 'EditGuestController@editGuest')->name('editguest')->middleware('guest');
+Route::get('/editguestlistpage/{num_list}', 'EditGuestListController@index')->name('editguestlistpage')->middleware('guest');
+Route::post('/editguestlist', 'EditGuestListController@editGuestList')->name('editguestlist')->middleware('guest');

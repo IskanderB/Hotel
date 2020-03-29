@@ -6,19 +6,31 @@
 }
 .content .status_box_num .status {
   padding: 5px 25px 5px 25px;
-  background-color: red;
   border-radius: 20px;
   margin-left: 10px;
+}
+.content .status_box_num .status_busy {
+  background-color: red;
+}
+.content .status_box_num .status_avail {
+  background-color: green;
+  color: white;
 }
 .content .reserv_status_box {
   margin-top: 20px;
 }
 .content .reserv_status_box a .reserv_status {
   padding: 5px 25px 5px 25px;
-  background-color: blue;
   border-radius: 20px;
   margin-left: 10px;
   margin-top: -3px;
+}
+.content .reserv_status_box a .reserv_status_busy {
+  background-color: blue;
+  color: white;
+}
+.content .reserv_status_box a .reserv_status_avail {
+  background-color: yellow;
 }
 .content .room_btns {
   margin-top: 20px;

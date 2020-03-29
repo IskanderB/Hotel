@@ -5,19 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\GuestList;
 
-class GuestListController extends Controller
+class EditGuestListController extends Controller
 {
   private $sizes = [
-    'num_room' => 10,
-    'id_guest' => 10,
-    'time_in' => 30,
     'time_out' => 30,
-    'pay' => 30,
   ];
 
   public function index(Request $request)
   {
-    return view('guestList.guestList', [
+    return view('editGuestList.editGuestList', [
       'guest_list' => $this->getGuestList($request),
     ]);
   }
@@ -28,14 +24,14 @@ class GuestListController extends Controller
     return $g_list_obj->getGuestList($request->num_list)[0];
   }
 
-  public function goIn(Request $request)
+  public function editGuestList(Request $request)
   {
     $this->checkEmptySize($request);
 
     $g_list_obj = new GuestList();
-    $g_list = $g_list_obj->goIn($request);
+    $g_list = $g_list_obj->editGuestList($request);
 
-    if($g_list) return redirect()->route('happy', ['type' => 'guest_list', 'id' => $g_list]);
+    if($g_list) return redirect()->route('happy', ['type' => 'room', 'id' => $g_list]);
     else die('Что то пошло не так :(');
   }
 
