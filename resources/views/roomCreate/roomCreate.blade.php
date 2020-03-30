@@ -8,10 +8,23 @@
     <div class="card-body">
       <form class="reserv_form" action="/appendroom" method="POST">
           @csrf
+
+        <div class="form-group row">
+          <label for="full_name" class="col-lg-3 col-md-3 col-form-label text-md-right">Номер</label>
+          <div class="col-lg-6 col-md-8">
+            <input type="text" required id="id" class="form-control" name="id" maxlength="10">
+          </div>
+        </div>
+
         <div class="form-group row">
           <label for="full_name" class="col-lg-3 col-md-3 col-form-label text-md-right">Тип номера</label>
           <div class="col-lg-6 col-md-8">
-            <input type="text"  required id="type_room" class="form-control" name="type_room" maxlength="130" minlength="5">
+            <select name="type_room">
+              @foreach($types as $type)
+              <option>{{$type->type_room}}</option>
+              @endforeach
+            </select>
+            <!-- <input type="text"  required id="type_room" class="form-control" name="type_room" maxlength="130" minlength="5"> -->
           </div>
         </div>
 

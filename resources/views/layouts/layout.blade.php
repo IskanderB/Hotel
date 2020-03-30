@@ -6,7 +6,7 @@
            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-   <title>Hotel</title>
+   <title>Алые Паруса</title>
    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -19,11 +19,11 @@
   <header class="header">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 logo d-flex">
+        <div class="col-lg-5 logo d-flex">
           <div class="logo_text_icon d-flex">
             <a href="/"> <i class="fa fa-hotel" aria-hidden="true"></i></a>
               <div class="logo_text">
-                <a href="/">Hotel</a>
+                <a href="/">Алые Паруса</a>
               </div>
           </div>
           <div class="menu_bar" id="menu_bar">
@@ -37,7 +37,7 @@
           </div>
         </div>-->
 
-        <div class="col-lg-8 ml-auto col-xl-7">
+        <div class="col-lg-7 ml-auto col-xl-7">
           <nav id="menu_header" class="menu_header">
             <ul class="menu d-flex justify-content-center">
               <li class="menu__item">

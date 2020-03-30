@@ -1,0 +1,14 @@
+.type_box {
+  justify-content: space-between;
+}
+.type_box .type_text {
+  display: inline-block;
+  height: 22px;
+  margin-top: 7px;
+}
+.type_box a {
+  margin-bottom: 0px;
+}
+.content .btn_app_type {
+  margin-top: 10px;
+}

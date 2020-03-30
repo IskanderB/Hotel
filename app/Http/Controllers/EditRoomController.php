@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Room;
+use App\TypeRoom;
 
 class EditRoomController extends Controller
 {
@@ -19,7 +20,14 @@ class EditRoomController extends Controller
   {
     return view('editRoom.editRoom', [
       'room' => $this->getRoom($request->num_room),
+      'types' => $this->getTypes(),
     ]);
+  }
+
+  private function getTypes()
+  {
+    $types = new TypeRoom();
+    return $types->getTypes();
   }
 
   private function getRoom($id)

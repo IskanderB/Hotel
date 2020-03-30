@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Guest;
+use App\TypeDoc;
 
 class GuestRegisterController extends Controller
 {
@@ -16,7 +17,15 @@ class GuestRegisterController extends Controller
   ];
   public function index()
   {
-    return view('guestRegister.guestRegister');
+    return view('guestRegister.guestRegister', [
+        'types' => $this->getTypes(),
+    ]);
+  }
+
+  private function getTypes()
+  {
+    $types = new TypeDoc();
+    return $types->getTypes();
   }
 
   public function guestRegister(Request $request)

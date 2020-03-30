@@ -65,5 +65,10 @@ class Reserv extends Model
       else false;
     }
 
+    public function deleteReserv($id)
+    {
+      $this->delete()->where('id', '=', $id);
+    }
+
 
 }

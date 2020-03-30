@@ -22,6 +22,13 @@
       </div>
 
       <div class="form-group row">
+        <label for="full_name" class="col-lg-3 col-md-3 col-form-label text-md-right">Номер брони</label>
+        <div class="col-lg-6 col-md-8">
+          <input type="text" required id="id_reserv" class="form-control" name="id_reserv" maxlength="10">
+        </div>
+      </div>
+
+      <div class="form-group row">
         <label for="full_name" class="col-lg-3 col-md-3 col-form-label text-md-right">Дата заселения</label>
         <div class="input_time col-lg-6 col-md-8">
               <input type="date" class="form-control" id="time_in" name="time_in" required maxlength="30">

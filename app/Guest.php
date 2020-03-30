@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\TypeDoc;
 
 class Guest extends Model
 {
@@ -11,16 +12,24 @@ class Guest extends Model
       return $this->insertGetId([
         'guest_name' => $request->guest_name,
         'sex' => $request->sex,
-        'type_doc' => $request->type_doc,
+        'type_doc' => $this->getIdType($request->type_doc),
         'num_doc' => $request->num_doc,
         'born_date' => $request->born_date,
         'address' => $request->address,
       ]);
     }
 
+    private function getIdType($type_doc)
+    {
+      $type_obj = new TypeDoc();
+      return $type_obj->getType($type_doc)->id;
+    }
+
     public function getGuests()
     {
-      return $this->select()->get();
+      return $this->select()
+      ->join('type_docs', 'guests.type_doc', '=', 'type_docs.id')
+      ->get();
     }
 
     public function getGuest($id)

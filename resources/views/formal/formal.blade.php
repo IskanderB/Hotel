@@ -2,8 +2,16 @@
 
 @section('content')
   <div class="content">
-    <div class="formal_btn_box">
+    <div class="formal_btn_box d-flex">
       <a href="/guestregister" class="btn btn-primary">Регистрация гостя</a>
+      <a href="/typeroom" class="btn btn-primary">Типы номеров</a>
+      <a href="/typedoc" class="btn btn-primary">Типы документов</a>
+      <div class="logout" >
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+            @csrf
+            <button type="submit" class="btn btn-primary">Выход</button>
+        </form>
+      </div>
     </div>
 
     <div class="card">

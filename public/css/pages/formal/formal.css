@@ -1,3 +1,6 @@
 .content .formal_btn_box {
   margin-bottom: 20px;
 }
+.content .formal_btn_box a {
+  margin-right: 5px;
+}

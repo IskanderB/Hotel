@@ -24,8 +24,11 @@
     <div class="form-group row">
       <label for="full_name" class="col-lg-3 col-md-3 col-form-label text-md-right">Документ</label>
       <div class="col-lg-6 col-md-8">
-        <input type="text" required id="type_doc" class="form-control" name="type_doc"
-         maxlength="32"  minlength="10">
+        <select name="type_doc">
+          @foreach($types as $type)
+          <option>{{$type->type_doc}}</option>
+          @endforeach
+        </select>
       </div>
     </div>
 

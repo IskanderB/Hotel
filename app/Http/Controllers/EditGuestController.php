@@ -19,7 +19,14 @@ class EditGuestController extends Controller
   {
     return view('editGuest.editGuest', [
       'guest' => $this->getGuest($request->id_guest),
+      'types' => $this->getTypes(),
     ]);
+  }
+
+  private function getTypes()
+  {
+    $types = new TypeDoc();
+    return $types->getTypes();
   }
 
   private function getGuest($id)

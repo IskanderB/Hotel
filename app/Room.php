@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\TypeRoom;
 
 class Room extends Model
 {
@@ -10,7 +11,8 @@ class Room extends Model
     public function appendRoom($request)
     {
       return $this->insertGetId([
-        'type_room' => $request->type_room,
+        'id' => $request->id,
+        'type_room' => $this->getIdType($request->type_room),
         'place_num' => $request->place_num,
         'floor' => $request->floor,
         'num_phone' => $request->num_phone,
@@ -19,25 +21,33 @@ class Room extends Model
       ]);
     }
 
+    private function getIdType($type_room)
+    {
+      $type_obj = new TypeRoom();
+      return $type_obj->getType($type_room)->id;
+    }
+
     public function getRooms()
     {
       return $this
+      ->leftJoin('type_rooms', 'rooms.type_room', '=', 'type_rooms.id')
       ->leftJoin('guest_lists', 'rooms.id', '=', 'guest_lists.num_room')
       ->leftJoin('reservs', 'rooms.id', '=', 'reservs.num_room')
-      ->select('rooms.id as id', 'rooms.type_room as type_room', 'rooms.place_num as place_num', 'rooms.floor as floor',
+      ->select('rooms.id as id', 'rooms.place_num as place_num', 'rooms.floor as floor',
       'rooms.num_phone as num_phone', 'rooms.price as price', 'rooms.size as size', 'guest_lists.id as g_l_id',
-      'reservs.check_reserv as check_reserv')
+      'reservs.check_reserv as check_reserv', 'type_rooms.type_room as type_room')
       ->get();
     }
 
     public function getRoom($id)
     {
       return $this
+      ->leftJoin('type_rooms', 'rooms.type_room', '=', 'type_rooms.id')
       ->leftJoin('guest_lists', 'rooms.id', '=', 'guest_lists.num_room')
       ->leftJoin('reservs', 'rooms.id', '=', 'reservs.num_room')
-      ->select('rooms.id as id', 'rooms.type_room as type_room', 'rooms.place_num as place_num', 'rooms.floor as floor',
+      ->select('rooms.id as id', 'rooms.place_num as place_num', 'rooms.floor as floor',
       'rooms.num_phone as num_phone', 'rooms.price as price', 'rooms.size as size', 'guest_lists.id as g_l_id',
-      'guest_lists.id_guest as id_guest','reservs.check_reserv as check_reserv')
+      'guest_lists.id_guest as id_guest','reservs.check_reserv as check_reserv', 'type_rooms.type_room as type_room')
       ->where('rooms.id', '=', $id)
       ->get();
     }
@@ -47,7 +57,7 @@ class Room extends Model
       if(!$this->checkChanges($request)) return true;
 
       return $this->where('id', '=', $request->id)->update([
-        'type_room' => $request->type_room,
+        'type_room' => $this->getIdType($request->type_room),
         'place_num' => $request->place_num,
         'floor' => $request->floor,
         'num_phone' => $request->num_phone,
